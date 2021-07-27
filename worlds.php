@@ -46,6 +46,8 @@
                 $page = min($_GET['page'], $max_pages);
 
                 $start_index = $ITEMS_PER_PAGE * ($page-1);
+            } else {
+                $_GET['page'] = 1;
             }
 
             $dirs = [];
@@ -90,7 +92,16 @@
             <h4>Pages: </h4>
             <h4> 
                 <?php foreach (range(1, $max_pages) as $page_no) { ?>
-                    <a href="?type=<?= $_GET['type'] ?>&page=<?= $page_no ?>"><?= $page_no ?></a>
+                    <?php $iscurrent = $page_no == $_GET['page']; ?>
+                    <?php if (!$iscurrent) { ?>
+                    <a href="?type=<?= $_GET['type'] ?>&page=<?= $page_no ?>">
+                    <?php } ?>
+
+                        <?= $page_no ?>
+                    
+                    <?php if (!$iscurrent) { ?>
+                    </a>
+                    <?php } ?>
                 <?php } ?>
             </h4>
         </div>
