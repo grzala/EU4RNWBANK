@@ -16,7 +16,19 @@
 			<br/>
 			<br/>
 			I experimented with other ways to do this, but there was no other way to recreate a once created new world. I tried recreating new worlds using seeds, but 
-			even when using one seed the world was different each time. I don't know if this is intended behaviour of the game. 
+			even when using one seed the world was different each time. I don't know if this is intended behaviour of the game, but generating using seed would generate a similar world,
+			not one that is exactly same. If you want to use a seed:
+			<ol>
+				<li>Download a save file</li>
+				<li>Change file extension from .eu4 to .zip</li>
+				<li>Open zip and put a file called "gamestate" outside of the zip</li>
+				<li>Open gamestate with a text editor (visual studio code, notepad++, etc. Regular notepad might get stuck)</li>
+				<li>Press CTRL+f and search for "random_world" and copy the seed</li>
+				<li>Launch a game</li>
+				<li>Open console (press `)</li>
+				<li>Type <i>map_random seed=<b>&lt;replace this with the number you copied&gt;</b></i> and press enter</li>
+				<li>Voilà</li>
+			</ol>
 			<br/>
 			<br/>
 			<br/>
