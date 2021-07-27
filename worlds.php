@@ -36,13 +36,13 @@
                 $save_dir = "rnw_mod";
             }
 
-            $dir = new DirectoryIterator(dirname("public/saves/" . $save_dir . "/."));
+            $dir = new DirectoryIterator(dirname(__DIR__ . "/public/saves/" . $save_dir . "/."));
             $len = iterator_count($dir);
             $max_pages = floor($len / $ITEMS_PER_PAGE);
 
             $start_index = 0;
             if (isset($_GET['page'])) {
-                $page = max(0, $_GET['page']);
+                $page = max(1, $_GET['page']);
                 $page = min($_GET['page'], $max_pages);
 
                 $start_index = $ITEMS_PER_PAGE * ($page-1);
@@ -92,6 +92,7 @@
             <h4>Pages: </h4>
             <h4> 
                 <?php foreach (range(1, $max_pages) as $page_no) { ?>
+                    <?php if ($page_no <= 0) continue; ?>
                     <?php $iscurrent = $page_no == $_GET['page']; ?>
                     <?php if (!$iscurrent) { ?>
                     <a href="?type=<?= $_GET['type'] ?>&page=<?= $page_no ?>">
