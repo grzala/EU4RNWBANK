@@ -20,7 +20,7 @@
 
             <div class="wrapper" id="main-wrapper">
                 <div class="top">
-                    <img class="rnwbank-logo-img" src="/public/img/main.png" />
+                    <a href="/"><img class="rnwbank-logo-img" src="/public/img/main.png" /></a>
                 </div>
                 
                 

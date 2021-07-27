@@ -89,13 +89,9 @@
         <div class="pages-main-container">
             <h4>Pages: </h4>
             <h4> 
-                <?php
-                    foreach (range(1, $max_pages) as $page_no) {
-                    ?>
-                        <a href="?type=<?= $_GET['type'] ?>&page=<?= $page_no ?>"><?= $page_no ?></a>
-                    <?php
-                    }
-                ?>
+                <?php foreach (range(1, $max_pages) as $page_no) { ?>
+                    <a href="?type=<?= $_GET['type'] ?>&page=<?= $page_no ?>"><?= $page_no ?></a>
+                <?php } ?>
             </h4>
         </div>
     </div>
