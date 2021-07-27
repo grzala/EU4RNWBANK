@@ -1,0 +1,4 @@
+make folders
+./extracted
+./public/saves/vanilla
+./public/saves/rnw_mod
